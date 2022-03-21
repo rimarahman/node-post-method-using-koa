@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 exports.createUser = ctx =>{
 
     console.log("createuser function fired");
@@ -17,3 +19,13 @@ exports.createUser = ctx =>{
     };
 
 };
+
+
+exports.processFiles = ctx => { 
+    const fileStream = fs.createReadStream("./video-file-stream.mp4");
+    ctx.body = fileStream;
+    console.log("processfile");
+};
+
+
+//<video control src="http//localhost:3000/files"/>;
